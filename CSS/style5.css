@@ -1,0 +1,10 @@
+table { border-spacing: 15px;
+        text-align: center; }
+
+legend { font-weight: bold; }
+
+form { display: inline-block;
+       text-align: center; }
+       
+input, textarea, select { font-size: 18px; }
+

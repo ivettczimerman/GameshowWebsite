@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Sat, 22 Nov 2014 12:38:48 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>GAMESHOW: GAME REVIEWS</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/style2.css"/>
+    
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<script type="text/javascript">
+	
+	  function showImage(img_name) {
+	    document.getElementById('large_img').src = img_name;
+		showLargeImagePanel();
+		unselectAll();
+      }
+	  
+	  function showLargeImagePanel() {
+	  	document.getElementById('large_img_panel').style.visibility = 'visible';
+      }
+	  
+	  function unselectAll() {
+	    if(document.selection) document.selection.empty();
+        if(window.getSelection) window.getSelection().removeAllRanges();
+      }
+	  
+ 	  function hideMe(obj) {
+	    obj.style.visibility = 'hidden';
+      }
+	  
+	  var opa = 0.04;
+	  function increaseOpacity(i, timer) {
+    	    var element = document.getElementById("score" + i);
+    		element.style.opacity = opa + timer*0.01;
+    		timer++;
+    		window.setTimeout (function(){increaseOpacity(i, timer)}, 50);
+	  }
+	  function showScore(i) {
+	    increaseOpacity(i, 0);
+	  }
+	  
+	  function mouseLeave(i) {
+	    var x = document.getElementById("score" + i);
+		x.onmouseover = null;
+	  }
+	  
+	</script>
+  </head>
+  <body>
+    <div id="top">
+      <h1><a href="index.html">GAMESHOW</a></h1>
+	  <p>"Video games are bad for you. That's what they said about Rock and Roll..."-Shigeru Miyamoto</p>
+	  <ul>
+	    <li><a href="index.html">HOME</a> </li>
+	    <li><a href="reviews.html" id="currentPage">GAME REVIEWS</a> </li>
+        <li><a href="ratings.html">GAME RATINGS</a> </li>
+        <li><a href="gallery.html">VIDEO GALLERY</a> </li>
+        <li><a href="suggestions.html">GAME SUGGESTIONS</a> </li>
+      </ul>
+	</div>
+	<hr>
+	<div id="center">
+	  <table style="width:100%">
+  	    <tr>
+		  <th></th>
+		  <th></th>
+		  <th>GAME TITLE AND REVIEW</th>
+		  <th>SITE RATING</th>
+		</tr>
+		<tr>
+          <td>1</td>
+      	  <td><img src="images/video_game_image_0.jpg" onclick="showImage('images/video_game_image_0.jpg');" width="1920" height="1080" alt=""></td> 
+    	  <td><span style="color: teal; font-weight: bold">Tom Clancy's The Division</span><br><br>
+		    Coming 2015<br>
+			PC PS4 XBOX ONE<br>
+			Tom Clancy's The Division has players take the role of Division agents where they find themselves caught up in an 
+			epic conspiracy, forced to combat not only the effects of a manmade virus, but also the rising threat of those behind it.</td>
+		  <td class="score" id="score1" onmouseover="showScore(1)" onmouseout="mouseLeave(1)">9.8</td>
+  		</tr>
+  		<tr>
+    	  <td>2</td>
+      	  <td><img src="images/video_game_image_1.jpg" onclick="showImage('images/video_game_image_1.jpg');" width="1920" height="1080" alt=""></td> 
+    	  <td><span style="color: teal; font-weight: bold">The Witcher 3: Wild Hunt</span><br><br>
+		    Coming Feb 24, 2015<br>
+			MACINTOSH PC + 2 MORE<br>
+			With the Empire attacking the Kingdoms of the North and the Wild Hunt, a cavalcade of ghastly riders, breathing down 
+			your neck, the only way to survive is to fight back. As Geralt of Rivia, a master swordsman and monster hunter, leave 
+			none of your enemies standing.
+		  <td class="score" id="score2" onmouseover="showScore(2)" onmouseout="mouseLeave(2)">8.7</td>
+  		</tr>
+		<tr>
+          <td>3</td>
+      	  <td><img src="images/video_game_image_2.jpg" onclick="showImage('images/video_game_image_2.jpg');" width="1920" height="1080" alt=""></td> 
+    	  <td><span style="color: teal; font-weight: bold">Metal Gear Solid V: The Phantom Pain</span><br><br>
+		    Coming 2015<br>
+			PC PS3 + 3 MORE<br>
+			Metal Gear Solid V: The Phantom Pain marks the first open-world adventure in the series.</td>
+		  <td class="score" id="score3" onmouseover="showScore(3)" onmouseout="mouseLeave(3)">9.6</td>
+  		</tr>
+  		<tr>
+    	  <td>4</td>
+      	  <td><img src="images/video_game_image_3.jpg" onclick="showImage('images/video_game_image_3.jpg');" width="1920" height="1080" alt=""></td> 
+    	  <td><span style="color: teal; font-weight: bold">Evolve</span><br><br>
+		    Coming Feb 10, 2015<br>
+			PC PS4 XBOX ONE<br>
+			Evolve is a multiplayer shooter where four hunters face-off against a single, player-controlled monster. Play as the 
+			Monster to use savage abilities to kill your human enemies, or choose one of four Hunter classes (Assault, Trapper, Medic 
+			and Support) and team up to take down the beast on the planet Shear.</td>
+		  <td class="score" id="score4" onmouseover="showScore(4)" onmouseout="mouseLeave(4)">8.3</td>
+  		</tr>
+		<tr>
+          <td>5</td>
+      	  <td><img src="images/video_game_image_4.jpg" onclick="showImage('images/video_game_image_4.jpg');" width="1920" height="1080" alt=""></td> 
+    	  <td><span style="color: teal; font-weight: bold">Batman: Arkham Knight</span><br><br>
+		    Coming Jun 2, 2015<br>
+			PC PS4 XBOX ONE<br>
+			Batman faces the ultimate threat against the city he is sworn to protect. The Scarecrow returns to unite an impressive 
+			roster of super villains, including Penguin, Two-Face and Harley Quinn, to destroy The Dark Knight forever. The game 
+			introduces Rocksteady's uniquely designed version of the Batmobile---drivable for the first time in the franchise. 
+			Batman: Arkham Knight offers gamers the ultimate and complete Batman experience as they tear through the streets and 
+			soar across the skyline of the entirety of Gotham City.</td>
+		  <td class="score" id="score5" onmouseover="showScore(5)" onmouseout="mouseLeave(5)">10</td>
+  		</tr>
+  		<tr>
+    	  <td>6</td>
+      	  <td><img src="images/video_game_image_5.jpg" onclick="showImage('images/video_game_image_5.jpg');" width="1920" height="1080" alt=""></td> 
+    	  <td><span style="color: teal; font-weight: bold">Halo 5: Guardians</span><br><br>
+		    Coming 2015<br>
+            XBOX ONE<br>
+			A new entry in the Halo franchise was announced at the Microsoft Press Conference at E3 2013 for the Xbox One.</td>
+		  <td class="score" id="score6" onmouseover="showScore(6)" onmouseout="mouseLeave(6)">7.4</td>
+  		</tr>
+	  </table>
+	</div>
+	<hr>
+	<div id="bottom">Copyright &copy; 2014 GAMESHOW<br>
+	  <a href="mailto:gamer@gameshow.com">gamer@gameshow.com</a>
+	</div>
+	<div id="large_img_panel" onclick="hideMe(this);">
+	  <img id="large_img" src="source" alt="" style="height: 70%; width: 70%; margin: 0; padding: 100px 0px 0px 0px;" />
+    </div>
+  </body>
+</html>

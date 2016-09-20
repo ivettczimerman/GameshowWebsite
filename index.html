@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Fri, 21 Nov 2014 16:50:35 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>GAMESHOW</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/style1_1.css"/>
+    
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<script>
+	  imageNumber = 0;
+	  function changeImage() {
+	    imageNumber++;
+		if (imageNumber == 6) {
+		  imageNumber = 0;
+		}
+		document.getElementById("image").src = "images/video_game_image_" + String(imageNumber) + ".jpg";
+		window.setTimeout ("changeImage();", 3000);
+	  }
+	  window.onload = function() { changeImage()};
+	</script>
+  </head>
+  <body>
+    <div id="top">
+      <h1><a href="index.html">GAMESHOW</a></h1>
+	  <p>"Video games are bad for you. That's what they said about Rock and Roll..."-Shigeru Miyamoto</p>
+	  <ul>
+	    <li><a href="index.html" id="currentPage">HOME</a> </li>
+	    <li><a href="reviews.html">GAME REVIEWS</a> </li>
+        <li><a href="ratings.html">GAME RATINGS</a> </li>
+        <li><a href="gallery.html">VIDEO GALLERY</a> </li>
+        <li><a href="suggestions.html">GAME SUGGESTIONS</a> </li>
+      </ul>
+	</div>
+	<hr>
+	<div id="center">
+	  <img id="image" src="images/video_game_image_1.jpg" width="1920" height="1080" alt="">
+	</div>
+	<hr>
+	<div id="bottom">Copyright &copy; 2014 GAMESHOW<br>
+	  <a href="mailto:gamer@gameshow.com">gamer@gameshow.com</a>
+	</div>
+  </body>
+</html>

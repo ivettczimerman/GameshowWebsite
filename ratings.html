@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Sat, 22 Nov 2014 12:38:48 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>GAMESHOW: BEST GAMES</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/style3.css"/>
+    
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<script type="text/javascript">
+	
+	  var sums = [0, 0, 0, 0, 0, 0];
+	  var counters = [0, 0, 0, 0, 0, 0];
+	  var grades = [0, 0, 0, 0, 0, 0];
+	  
+	  function rate () {
+	    for (var i = 0; i <= 5; i++) {
+	      var selects = document.getElementById ("rating" + i);
+		  var group = selects.options [selects.selectedIndex].value;
+		  
+		  convertRatings (group, i);
+
+		  var element = document.getElementById ("averageRating" + i);
+		  
+		  var stringRating = Math.round (grades [i]);
+		  if (stringRating == 4)
+		    element.innerHTML = "Rating <b>Great</b> from " + counters[i] + " user/s";
+		  if (stringRating == 3)
+		    element.innerHTML = "Rating <b>Good</b> from " + counters[i] + " user/s";
+		  if (stringRating == 2)
+		    element.innerHTML = "Rating <b>Mediocre</b> from " + counters[i] + " user/s";
+		  if (stringRating == 1)
+		    element.innerHTML = "Rating <b>Bad</b> from " + counters[i] + " user/s";
+		}
+		
+		reset ();
+	  }
+	  
+	  function convertRatings (group, i) {
+	    if (group == "Great") {
+		  sums[i] += 4;
+		  counters[i] ++;
+		}
+		else if (group == "Good") {
+		  sums[i] += 3;
+		  counters[i] ++;
+	    }
+		else if (group == "Mediocre") {
+		  sums[i] += 2;
+		  counters[i] ++;
+		}
+		else if (group == "Bad") {
+		  sums[i] += 1;
+		  counters[i] ++;
+		}
+		
+		grades[i] = sums[i] / counters[i];
+	  }
+	  
+	  function reset () {
+    	for (var i = 0; i <= 5; i++) {
+    	      document.getElementById ("rating" + i).selectedIndex = 0;
+			}
+	  }
+	  
+	  function showDetails(i) {
+	  	document.getElementById('detailsPanel' + i).style.visibility = 'visible';
+      }
+	  
+	  function unselectAll() {
+	    if(document.selection) document.selection.empty();
+        if(window.getSelection) window.getSelection().removeAllRanges();
+      }
+	  
+ 	  function hideMe(obj) {
+	    obj.style.visibility = 'hidden';
+      }
+			
+	</script>
+  </head>
+  <body>
+    <div id="top">
+      <h1><a href="index.html">GAMESHOW</a></h1>
+	  <p>"Video games are bad for you. That's what they said about Rock and Roll..."-Shigeru Miyamoto</p>
+	  <ul>
+	    <li><a href="index.html">HOME</a> </li>
+	    <li><a href="reviews.html">GAME REVIEWS</a> </li>
+        <li><a href="ratings.html" id="currentPage">GAME RATINGS</a> </li>
+        <li><a href="gallery.html">VIDEO GALLERY</a> </li>
+        <li><a href="suggestions.html">GAME SUGGESTIONS</a> </li>
+      </ul>
+	</div>
+	<hr>
+	<div id="center">
+	  <table style="width:100%">
+  	    <tr>
+		  <th></th>
+		  <th>GAME TITLE</th>
+          <th>AVERAGE USER RATING</th>
+		  <th>USER RATING</th>
+		</tr>
+		<tr>
+          <td>1</td>
+		  <td class="name" onclick="showDetails(1);" >Tom Clancy's The Division</td>
+		  <td id="averageRating0"></td>
+    	  <td>
+		    <select id="rating0" name="rating0" size="1">
+		  	  <option class="default" disabled selected>Select rating</option>
+		  	  <option value="Great">Great</option>
+    		  <option value="Good">Good</option>
+			  <option value="Mediocre">Mediocre</option>
+			  <option value="Bad">Bad</option>
+			</select>
+		  </td>  
+  		</tr>
+  		<tr>
+          <td>2</td>
+		  <td class="name" onclick="showDetails(2);">The Witcher 3: Wild Hunt</td>
+		  <td id="averageRating1"></td>
+		  <td>
+		    <select id="rating1" name="rating1" size="1">
+		  	  <option class="default" disabled selected>Select rating</option>
+		  	  <option value="Great">Great</option>
+    		  <option value="Good">Good</option>
+			  <option value="Mediocre">Mediocre</option>
+			  <option value="Bad">Bad</option>
+			</select>
+		  </td>
+  		</tr>
+		<tr>
+          <td>3</td>
+		  <td class="name" onclick="showDetails(3);">Metal Gear Solid V: The Phantom Pain</td>
+		  <td id="averageRating2"></td>
+		  <td>
+		    <select id="rating2" name="rating2" size="1">
+		  	  <option class="default" disabled selected>Select rating</option>
+			  <option value="Great">Great</option>
+    		  <option value="Good">Good</option>
+			  <option value="Mediocre">Mediocre</option>
+			  <option value="Bad">Bad</option>
+			</select>
+		  </td>
+  		</tr>
+  		<tr>
+          <td>4</td>
+		  <td class="name" onclick="showDetails(4);">Evolve</td>
+		  <td id="averageRating3"></td>
+		  <td>
+		    <select id="rating3" name="rating3" size="1">
+		  	  <option class="default" disabled selected>Select rating</option>
+			  <option value="Great">Great</option>
+    		  <option value="Good">Good</option>
+			  <option value="Mediocre">Mediocre</option>
+			  <option value="Bad">Bad</option>
+			</select>
+		   </td>
+  		</tr>
+		<tr>
+          <td>5</td>
+		 <td class="name" onclick="showDetails(5);">Batman: Arkham Knight</td>
+		  <td id="averageRating4"></td>
+		  <td>
+		    <select id="rating4" name="rating4" size="1">
+		  	  <option class="default" disabled selected>Select rating</option>
+			  <option value="Great">Great</option>
+    		  <option value="Good">Good</option>
+			  <option value="Mediocre">Mediocre</option>
+			  <option value="Bad">Bad</option>
+			</select>
+		  </td>
+  		</tr>
+  		<tr>
+          <td>6</td>
+		  <td class="name" onclick="showDetails(6);">Halo 5: Guardians</td>
+		  <td id="averageRating5"></td>
+		  <td>
+		    <select id="rating5" name="rating5" size="1">
+		  	  <option class="default" disabled selected>Select rating</option>
+			  <option value="Great">Great</option>
+    		  <option value="Good">Good</option>
+			  <option value="Mediocre">Mediocre</option>
+			  <option value="Bad">Bad</option>
+			</select>
+		  </td>
+  		</tr>
+		<tr>
+		  <td></td>
+		  <td></td>
+		  <td></td>
+		  <td><input type="button" value="Submit ratings" id="submit" onclick="rate()"></td>
+		</tr>
+	  </table>
+	</div>
+	<hr>
+	<div id="bottom">Copyright &copy; 2014 GAMESHOW<br>	  
+	  <a href="mailto:gamer@gameshow.com">gamer@gameshow.com</a>
+	</div>
+	
+	<div class="detailsPanel" id="detailsPanel1" onclick="hideMe(this);">
+	  <div class="details" id="details1">
+	    <table style="width:100%">
+		  <tr>
+			<th colspan="2">GAME DETAILS</th>
+		  </tr>
+		  <tr>
+		    <td>Game title</td>
+			<td>Tom Clancy's The Division</td>
+		  </tr>
+		  <tr>
+		    <td>Publisher</td>
+		    <td>Ubisoft</td>
+		  </tr>
+		  <tr>
+		    <td>Developer</td>
+		    <td>Ubisoft</td>
+		  </tr>
+		  <tr>
+		    <td>Genre/s</td>
+		    <td>Action, Third-Person, Shooter, 3D, Team-Based</td>
+		  </tr>
+		</table>
+	  </div>
+    </div>
+	
+	<div class="detailsPanel" id="detailsPanel2" onclick="hideMe(this);">
+	  <div class="details" id="details2">
+	    <table style="width:100%">
+		  <tr>
+			<th colspan="2">GAME DETAILS</th>
+		  </tr>
+		  <tr>
+		    <td>Game title</td>
+			<td>The Witcher 3: Wild Hunt</td>
+		  </tr>
+		  <tr>
+		    <td>Publisher</td>
+		    <td>Warner Bros. Interactive Entertainment</td>
+		  </tr>
+		  <tr>
+		    <td>Developer</td>
+		    <td>CD Projekt Red Studio</td>
+		  </tr>
+		  <tr>
+		    <td>Genre/s</td>
+		    <td>Action, Role-Playing</td>
+		  </tr>
+		</table>
+	  </div>
+    </div>
+	
+	<div class="detailsPanel" id="detailsPanel3" onclick="hideMe(this);">
+	  <div class="details" id="details3">
+	    <table style="width:100%">
+		  <tr>
+			<th colspan="2">GAME DETAILS</th>
+		  </tr>
+		  <tr>
+		    <td>Game title</td>
+			<td>Metal Gear Solid V: The Phantom Pain</td>
+		  </tr>
+		  <tr>
+		    <td>Publisher</td>
+		    <td>Konami</td>
+		  </tr>
+		  <tr>
+		    <td>Developer</td>
+		    <td>Kojima Productions, Moby Dick Studio</td>
+		  </tr>
+		  <tr>
+		    <td>Genre/s</td>
+		    <td>3D, Open-World, Action, Adventure</td>
+		  </tr>
+		</table>
+	  </div>
+    </div>
+	
+	<div class="detailsPanel" id="detailsPanel4" onclick="hideMe(this);">
+	  <div class="details" id="details4">
+	    <table style="width:100%">
+		  <tr>
+			<th colspan="2">GAME DETAILS</th>
+		  </tr>
+		  <tr>
+		    <td>Game title</td>
+			<td>Evolve</td>
+		  </tr>
+		  <tr>
+		    <td>Publisher</td>
+		    <td>Take-Two Interactive, 2K Games</td>
+		  </tr>
+		  <tr>
+		    <td>Developer</td>
+		    <td>Turtle Rock Studios</td>
+		  </tr>
+		  <tr>
+		    <td>Genre/s</td>
+		    <td>Team-Based, Action, First-Person, 3D, Shooter</td>
+		  </tr>
+		</table>
+	  </div>
+    </div>
+	
+	<div class="detailsPanel" id="detailsPanel5" onclick="hideMe(this);">
+	  <div class="details" id="details5">
+	    <table style="width:100%">
+		  <tr>
+			<th colspan="2">GAME DETAILS</th>
+		  </tr>
+		  <tr>
+		    <td>Game title</td>
+			<td>Batman: Arkham Knight</td>
+		  </tr>
+		  <tr>
+		    <td>Publisher</td>
+		    <td>Warner Bros. Interactive Entertainment</td>
+		  </tr>
+		  <tr>
+		    <td>Developer</td>
+		    <td>Rocksteady Studios</td>
+		  </tr>
+		  <tr>
+		    <td>Genre/s</td>
+		    <td>Adventure, Action, 3D, Open-World</td>
+		  </tr>
+		</table>
+	  </div>
+    </div>
+	
+	<div class="detailsPanel" id="detailsPanel6" onclick="hideMe(this);">
+	  <div class="details" id="details6">
+	    <table style="width:100%">
+		  <tr>
+			<th colspan="2">GAME DETAILS</th>
+		  </tr>
+		  <tr>
+		    <td>Game title</td>
+			<td>Halo 5: Guardians</td>
+		  </tr>
+		  <tr>
+		    <td>Publisher</td>
+		    <td>Microsoft Game Studios</td>
+		  </tr>
+		  <tr>
+		    <td>Developer</td>
+		    <td>343 Industries</td>
+		  </tr>
+		  <tr>
+		    <td>Genre/s</td>
+		    <td>Team-Based, Action, First-Person, 3D, Shooter</td>
+		  </tr>
+		</table>
+	  </div>
+    </div>
+	
+  </body>
+</html>

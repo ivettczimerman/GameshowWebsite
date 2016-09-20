@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Fri, 21 Nov 2014 16:50:35 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>GAMESHOW: GAME SUGGESTIONS</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/style5.css"/>
+    
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<script type="text/javascript">
+			function submitSuggestion (event) {
+				var gameTitle = document.getElementById ("gametitle").value;
+				var releaseDate = document.getElementById ("releasedate").value;
+				var description = document.getElementById ("description").value;
+				var publisher = document.getElementById ("publisher").value;
+				var developer = document.getElementById ("developer").value;
+				
+				var selects = document.getElementById ("genre/s");
+				var group = getSelectValues (selects);
+				
+				var platform = getCheckedBoxes ('platform/s');
+				
+				if (window.XMLHttpRequest)
+				{// code for IE7+, Firefox, Chrome, Opera, Safari
+				    xmlhttp=new XMLHttpRequest();
+				}
+				else
+				{// code for IE6, IE5
+				    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange=function()
+				{
+				    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					{
+					    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+						var form1 = document.getElementById("myform");
+						form1.reset();
+					}
+				}
+				xmlhttp.open ("GET", "saveReview.php?gameTitle="+gameTitle + "&releaseDate=" +releaseDate + "&description=" 
+				    +description + "&publisher=" +publisher + "&developer=" +developer + "&group=" +group + "&platform=" +platform, true);
+				xmlhttp.send ();
+			}
+			
+			function getSelectValues(select) {
+ 			  var result = [];
+  			  var options = select && select.options;
+  			  var opt;
+
+  			  for (var i=0, iLen=options.length; i<iLen; i++) {
+    		  opt = options[i];
+
+    		      if (opt.selected) {
+      		      	 result.push(opt.value || opt.text);
+    		  	  }
+  			  }
+  			  return result;
+  			}
+			
+            function getCheckedBoxes(chkboxName) {
+              var checkboxes = document.getElementsByName(chkboxName);
+              var checkboxesChecked = [];
+
+              for (var i=0; i<checkboxes.length; i++) {
+
+                 if (checkboxes[i].checked) {
+                    checkboxesChecked.push(checkboxes[i].value);
+                 }
+              }
+
+              return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+            }
+			
+			</script>
+  </head>
+  <body>
+    <div id="top">
+      <h1><a href="index.html">GAMESHOW</a></h1>
+	  <p>"Video games are bad for you. That's what they said about Rock and Roll..."-Shigeru Miyamoto</p>
+	  <ul>
+	  	<li><a href="index.html">HOME</a></li>
+	    <li><a href="reviews.html">GAME REVIEWS</a> </li>
+        <li><a href="ratings.html">GAME RATINGS</a> </li>
+        <li><a href="gallery.html">VIDEO GALLERY</a> </li>
+        <li><a href="suggestions.html" id="currentPage">GAME SUGGESTIONS</a> </li>
+      </ul>
+	</div>
+	<hr>
+	<div id="center">
+        <form id="myform">
+            <fieldset>
+			<legend>SUGGEST A GAME FOR REVIEW</legend>
+                <table>
+					<tr>
+					    <td><label for="gametitle">Game title</label></td>
+					    <td><input type="text" id="gametitle" name="gametitle" maxlength="20" value="" /></td>
+					</tr>
+					<tr>
+					    <td><label for="releasedate">Release date</label></td>
+					    <td><input type="date" id="releasedate" name="releasedate" /></td>
+					</tr>
+					<tr>
+					    <td><label for="description">Description</label></td>
+					    <td><textarea id="description" name="description" cols="40" rows="2" ></textarea></td>
+					</tr>
+					<tr>
+					    <td><label for="publisher">Publisher</label></td>
+					    <td><input type="text" id="publisher" name="publisher" maxlength="20" value="" /></td>
+					</tr>
+					<tr>
+					    <td><label for="developer">Developer</label></td>
+					    <td><input type="text" id="developer" name="developer" maxlength="20" value="" /></td>
+					</tr>
+					<tr>
+					    <td><label for="genre/s">Genre/s</label></td>
+					    <td>
+						  <select id="genre/s" name="genre/s" size="4"  multiple="multiple">
+						    <option value="Action game">Action game</option>
+							<option value="Survival game">Survival game</option>
+							<option value="Action-adventure game">Action-adventure game</option>
+							<option value="Adventure game">Adventure game</option>
+							<option value="Role-playing game">Role-playing game</option>
+							<option value="Simulation game">Simulation game</option>
+							<option value="Strategy game">Strategy game</option>
+							<option value="Massively Multiplayer Online">Massively Multiplayer Online</option>
+					      </select>
+					    </td>
+					</tr>
+					<tr>
+						<td><label>Platform/s</label></td>
+						<td>
+						  <input type="checkbox" name="platform/s" value="PC" id="PC" />PC
+						  <input type="checkbox" name="platform/s" value="Xbox 360" id="Xbox_360" />Xbox 360
+						  <input type="checkbox" name="platform/s" value="PlayStation3" id="PlayStation3" />PlayStation3
+						  <input type="checkbox" name="platform/s" value="Xbox One" id="Xbox_One" />Xbox One
+						</td>
+					</tr>
+                </table>
+            </fieldset>
+            <input type="button" value="Submit suggestion" id="submit" onclick="submitSuggestion();"> 
+        </form>
+	</div>
+	<hr>
+	<div id="bottom">Copyright &copy; 2014 GAMESHOW<br>
+	  <a href="mailto:gamer@gameshow.com">gamer@gameshow.com</a>
+	</div>
+  </body>
+</html>

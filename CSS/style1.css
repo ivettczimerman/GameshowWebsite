@@ -1,0 +1,31 @@
+body { background-color: black;
+       color: white;
+       text-align: center;
+       font-size: larger; }
+       
+#center { background-color: white;
+          color: black; }
+
+a { text-decoration: none;
+    color: white; }
+
+#top h1 { font-size: 400%;
+          position: relative;
+          top: -40px; 
+          height: 0px; }
+
+#top ul { list-style-type: none;
+          background-color: teal; }
+          
+#top ul li { text-decoration: none;
+             display:inline;
+             margin-left: 40px;
+             margin-right: 40px; }
+             
+#top li a:hover { color: black; }
+
+#bottom { font-size: smaller; }
+
+#currentPage { color: black;
+               font-size: 150%}
+

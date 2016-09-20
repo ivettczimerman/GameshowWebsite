@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Sat, 22 Nov 2014 12:38:48 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>GAMESHOW: VIDEO GALLERY</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style1.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/style4.css"/>
+    
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<script type="text/javascript">
+	  var max = 5;
+	  var min = -5;
+	  function randomVideoRotation() {
+	    for (i = 1 ; i <=6 ; i++) {
+	      mouseLeave(i);
+		}
+	  }
+	  function mouseEnter(i) {
+	    var element = document.getElementById("video" + i);
+		element.style.mozTransform = "rotate(0deg)";
+        element.style.oTransform = "rotate(0deg)";
+        element.style.webkitTransform = "rotate(0deg)";
+        element.style.msTransform = "rotate(0deg)";
+        element.style.transform = "rotate(0deg)";
+	  }
+	  function mouseLeave(i) {
+	    var element = document.getElementById("video" + i);
+		var randomNumber = Math.random() * (max - min) + min; 
+		
+		element.style.mozTransform = "rotate("+randomNumber+"deg)";		
+        element.style.oTransform = "rotate("+randomNumber+"deg)";
+        element.style.webkitTransform = "rotate("+randomNumber+"deg)";
+		element.style.webkitBackfaceVisibility = "hidden";
+        element.style.msTransform = "rotate("+randomNumber+"deg)";
+        element.style.transform = "rotate("+randomNumber+"deg)";
+		element.style.backfaceVisibility = "hidden";
+	  }
+	  window.onpageshow = function() { randomVideoRotation()};
+	  
+	  window.onload = function () {
+	  
+	    /* For loop doesn't work here for some reason
+		   Uncaught TypeError: Cannot read property 'style' of null
+	    for (i = 1; i <=6; i++){
+		  var obj = document.getElementById("video" + i);
+		  obj.onmouseenter = function() {mouseEnter(i)};
+		  obj.onmouseleave = function() {mouseLeave(i)};
+		}
+		*/
+		
+	    var obj = document.getElementById("video1");
+		obj.onmouseenter = function() {mouseEnter(1)};
+		obj.onmouseleave = function() {mouseLeave(1)};
+		
+		obj = document.getElementById("video2");
+		obj.onmouseenter = function() {mouseEnter(2)};
+		obj.onmouseleave = function() {mouseLeave(2)};
+		
+		obj = document.getElementById("video3");
+		obj.onmouseenter = function() {mouseEnter(3)};
+		obj.onmouseleave = function() {mouseLeave(3)};
+		
+		obj = document.getElementById("video4");
+		obj.onmouseenter = function() {mouseEnter(4)};
+		obj.onmouseleave = function() {mouseLeave(4)};
+		
+		obj = document.getElementById("video5");
+		obj.onmouseenter = function() {mouseEnter(5)};
+		obj.onmouseleave = function() {mouseLeave(5)};
+		
+		obj = document.getElementById("video6");
+		obj.onmouseenter = function() {mouseEnter(6)};
+		obj.onmouseleave = function() {mouseLeave(6)};
+	  }
+	</script>
+  </head>
+  <body>
+    <div id="top">
+      <h1><a href="index.html">GAMESHOW</a></h1>
+	  <p>"Video games are bad for you. That's what they said about Rock and Roll..."-Shigeru Miyamoto</p>
+	  <ul>
+	    <li><a href="index.html">HOME</a> </li>
+	    <li><a href="reviews.html">GAME REVIEWS</a> </li>
+        <li><a href="ratings.html">GAME RATINGS</a> </li>
+        <li><a href="gallery.html" id="currentPage">VIDEO GALLERY</a> </li>
+        <li><a href="suggestions.html">GAME SUGGESTIONS</a> </li>
+      </ul>
+	</div>
+	<hr>
+	<div id="center">
+	  <iframe id="video1" width="560" height="315" src="//www.youtube.com/embed/EWJD8DMasCU?rel=0" allowfullscreen></iframe>
+	  <iframe id="video2" width="560" height="315" src="//www.youtube.com/embed/N4ony2r0QFs?rel=0" allowfullscreen></iframe>
+	  <iframe id="video3" width="560" height="315" src="//www.youtube.com/embed/g3fWCNPo7sI?rel=0" allowfullscreen></iframe>
+	  <iframe id="video4" width="560" height="315" src="//www.youtube.com/embed/xiufP40Efxo?rel=0" allowfullscreen></iframe>
+	  <iframe id="video5" width="560" height="315" src="//www.youtube.com/embed/wsf78BS9VE0?rel=0" allowfullscreen></iframe>
+	  <iframe id="video6" width="560" height="315" src="//www.youtube.com/embed/Ijw3N676yWY?rel=0" allowfullscreen></iframe>
+	</div>
+	<hr>
+	<div id="bottom">Copyright &copy; 2014 GAMESHOW<br>
+	  <a href="mailto:gamer@gameshow.com">gamer@gameshow.com</a>
+	</div>
+  </body>
+</html>
